@@ -11,7 +11,7 @@ def labels():
     return [d["SalePrice"] for d in data]
 
 
-def get_features(data):
+def get_features(e):
     """ Extract/transform features """
     def filter(v):
         if v == "NA":
@@ -19,11 +19,7 @@ def get_features(data):
 
         return v
 
-    features = [data["GrLivArea"],
-                data["TotalBsmtSF"],
-                data["LowQualFinSF"],
-                data["BsmtUnfSF"],
-                float(data["RoofStyle"]=="Gable")]
+    features = [e["OverallQual"], e["LotArea"], e["LowQualFinSF"], e["GrLivArea"], e["OverallCond"], e["TotalBsmtSF"], e["LandSlope"]=="Gtl", e["BldgType"]=="1Fam", e["BldgType"]=="TwnhsE", e["BldgType"]=="2fmCon"]
 
     return list(map(filter, features))
 
