@@ -19,7 +19,7 @@ def get_features(e):
 
         return v
 
-    features = [e["OverallQual"], e["LotArea"], e["LowQualFinSF"], e["GrLivArea"], e["OverallCond"], e["TotalBsmtSF"], e["LandSlope"]=="Gtl", e["BldgType"]=="1Fam", e["BldgType"]=="TwnhsE", e["BldgType"]=="2fmCon"]
+    features = [e["OverallQual"], e["LotArea"], e["LowQualFinSF"], e["GrLivArea"], e["OverallCond"], e["LandSlope"]=="Gtl", e["BldgType"]=="1Fam", e["BldgType"]=="TwnhsE", e["BldgType"]=="2fmCon"]
 
     return list(map(filter, features))
 
